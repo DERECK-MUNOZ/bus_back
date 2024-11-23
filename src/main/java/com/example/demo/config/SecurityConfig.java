@@ -19,7 +19,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .cors() // Activamos la configuración CORS
+            .cors() 
             .and()
             .csrf().disable() 
             .authorizeHttpRequests(auth -> auth
@@ -46,7 +46,7 @@ public class SecurityConfig {
         return source;
     }
 
-    // Definición de usuarios en memoria
+   
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder passwordEncoder) {
         UserDetails user = User.builder()
